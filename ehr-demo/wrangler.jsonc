@@ -1,0 +1,20 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "ehr-demo",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-09-28",
+	"workers_dev": true,
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "ehr-demo-db",
+			"database_id": "6fd66c6f-5dc5-45a4-bb49-e194cdc884cc",
+			"migrations_dir": "migrations"
+		},
+		{
+			"binding": "ehr_demo_db",
+			"database_name": "ehr-demo-db",
+			"database_id": "6fd66c6f-5dc5-45a4-bb49-e194cdc884cc"
+		}
+	]
+}
