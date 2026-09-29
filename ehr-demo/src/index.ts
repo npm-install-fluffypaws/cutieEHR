@@ -261,10 +261,13 @@ export default {
 
         const saved = url.searchParams.get("saved") === "1";
 
+        const patients = await listPatients(env);
+
         return html(
           patientPage({
             user,
             patient,
+            patients,
             encounters,
             message: saved ? "Fictional encounter note saved." : undefined,
           }),
@@ -332,10 +335,13 @@ export default {
             success: false,
           });
 
+          const patients = await listPatients(env);
+
           return html(
             patientPage({
               user,
               patient,
+              patients,
               encounters: await listEncounters(env, patientId),
               message: "Unable to save the fictional note. Check the form fields.",
             }),
